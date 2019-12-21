@@ -1,6 +1,6 @@
 # Book Manager
 
-Crie uma API Restful em .NET Core 2.0 ou maior utilizando boas práticas da OPP, na qual consiste em gerenciar livros dos autores que possuem mais de *30 anos de idade*. Um autor pode ter *nenhum ou muitos livros*, mas *um livro nunca é escrito por dois ou mais autores*. Um autor é composto de nome, data nascimento e identificação (RG ou CPF)*. Já *um livro é composto por título, data de lançamento, ISBN, categoria e autor*. *Todo livro possui um identificador único* mundialmente conhecido como *ISBN que tem como padrão XXX-XX-XXX-XXXX-X*.
+Crie uma API Restful em .NET Core 2.0 ou maior utilizando boas práticas da OPP, na qual consiste em gerenciar livros dos autores que possuem mais de *30 anos de idade*. Um autor pode ter *nenhum ou muitos livros*, mas *um livro nunca é escrito por dois ou mais autores*. Um autor é composto de *nome, data nascimento e identificação (RG ou CPF)*. Já *um livro é composto por título, data de lançamento, ISBN, categoria e autor*. *Todo livro possui um identificador único* mundialmente conhecido como *ISBN que tem como padrão XXX-XX-XXX-XXXX-X*.
 
 Utilize DDD e CQRS para estruturar seu projeto. Além disso, todo comando, além de salvar no banco de dados (relacional) o objeto deve ser enviado para um EventBus(Fila). Além disso, os dados dos autores precisam estar em cache e sempre atualizados. Ou seja, no momento em que um comando para livro for executado, os dados do autor deve ser pego no cache.
 
