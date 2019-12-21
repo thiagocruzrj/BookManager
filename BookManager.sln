@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{6278777A-408B-4DA3-B359-647A91D9332A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApps", "WebApps", "{EFAFD128-E6ED-4E3F-AE63-7459BF758625}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Author", "Author", "{2F503D07-53F4-4C5B-9C5A-AC502430D2AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookManager.Author.Domain", "src\BookManager.Author.Domain\BookManager.Author.Domain.csproj", "{9829C783-7DB3-4BF2-BADF-76A8D613388A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{3DB972D0-46D5-4586-8199-91DF202B2ABE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookManager.Core", "src\BookManager.Core\BookManager.Core.csproj", "{84920364-075F-44E8-AAD7-B886CEE310D7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9829C783-7DB3-4BF2-BADF-76A8D613388A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9829C783-7DB3-4BF2-BADF-76A8D613388A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9829C783-7DB3-4BF2-BADF-76A8D613388A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9829C783-7DB3-4BF2-BADF-76A8D613388A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84920364-075F-44E8-AAD7-B886CEE310D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84920364-075F-44E8-AAD7-B886CEE310D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84920364-075F-44E8-AAD7-B886CEE310D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84920364-075F-44E8-AAD7-B886CEE310D7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2F503D07-53F4-4C5B-9C5A-AC502430D2AD} = {6278777A-408B-4DA3-B359-647A91D9332A}
+		{9829C783-7DB3-4BF2-BADF-76A8D613388A} = {2F503D07-53F4-4C5B-9C5A-AC502430D2AD}
+		{3DB972D0-46D5-4586-8199-91DF202B2ABE} = {6278777A-408B-4DA3-B359-647A91D9332A}
+		{84920364-075F-44E8-AAD7-B886CEE310D7} = {3DB972D0-46D5-4586-8199-91DF202B2ABE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0A4DBCAF-6ED9-43FC-A90E-A1CB7D348883}
+	EndGlobalSection
+EndGlobal
