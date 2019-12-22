@@ -2,7 +2,6 @@
 using BookManager.Core.DomainObjects.ValueObjects;
 using System;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
 
 namespace BookManager.Author.Domain
 {
@@ -24,6 +23,7 @@ namespace BookManager.Author.Domain
         public void Validate()
         {
             Validations.ValidateIfEmpty(Name, "The field Name must be filled.");
+            Validations.ValidateIfAgeIsGreaterThan30(Birthdate, "Management is only done for authors over 30 years old.");
         }
     }
 }

@@ -4,7 +4,7 @@ using System;
 
 namespace BookManager.Author.Domain
 {
-    public class Book : Entity, IAgregateRoot
+    public class Book : Entity, IAggregateRoot
     {
         public Book(Guid categoryId, Guid authorId, string title, DateTime releaseDate, BookIdentificator isbn)
         {

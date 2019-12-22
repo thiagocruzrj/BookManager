@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Text.RegularExpressions;
 
 namespace BookManager.Core.DomainObjects
@@ -33,6 +31,12 @@ namespace BookManager.Core.DomainObjects
         {
             var regex = new Regex(pattern);
             if (!regex.IsMatch(value)) throw new DomainException(message);
+        }
+
+        public static void ValidateIfAgeIsGreaterThan30(DateTime birthdate, string message)
+        {
+            var YearBase = DateTime.Today.Year - 30;
+            if(birthdate.Year >= YearBase) throw new DomainException(message);
         }
 
         public static void ValidateIfEmpty(string value, string message)
@@ -91,7 +95,7 @@ namespace BookManager.Core.DomainObjects
 
         public static void ValidateIfFalse(bool boolvalue, string message)
         {
-            if (boolvalue) throw new DomainException(message);
+            if (!boolvalue) throw new DomainException(message);
         }
 
         public static void ValidateIfTrue(bool boolvalue, string message)

@@ -1,6 +1,4 @@
 using BookManager.Core.DomainObjects;
-using BookManager.Core.DomainObjects.ValueObjects;
-using System;
 using Xunit;
 
 namespace BookManager.Author.Domain.Tests

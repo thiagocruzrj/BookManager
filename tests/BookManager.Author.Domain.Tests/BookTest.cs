@@ -26,7 +26,7 @@ namespace BookManager.Author.Domain.Tests
             new Book(Guid.NewGuid(), Guid.NewGuid(), string.Empty, DateTime.Now, new BookIdentificator("XXX-XX-XXX-XXXX-X"))
             );
 
-            Assert.Equal("The field Title must be filled.", ex.Message);
+            Assert.Equal("The field Title must be filled.", ex.Message); 
 
             ex = Assert.Throws<DomainException>(() =>
             new Book(Guid.NewGuid(), Guid.NewGuid(), "Titulo", DateTime.Now, new BookIdentificator("XXX-XX-XXX-XXXX-"))
