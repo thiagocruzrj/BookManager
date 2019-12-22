@@ -12,7 +12,7 @@ namespace BookManager.Author.Domain
             AuthorId = authorId;
             Title = title;
             ReleaseDate = releaseDate;
-            ISBN = isbn;
+            Isbn = isbn;
             Validate();
         }
 
@@ -20,14 +20,14 @@ namespace BookManager.Author.Domain
         public Guid AuthorId { get; private set; }
         public string Title { get; private set; }
         public DateTime ReleaseDate { get; private set; }
-        public BookIdentificator ISBN { get; private set; }
+        public BookIdentificator Isbn { get; private set; }
         public Category Category { get; private set; }
         public Author Author { get; private set; }
         public void Validate()
         {
             Validations.ValidateIfEmpty(Title, "The field Title must be filled.");
-            Validations.DifferentValidate(CategoryId, Guid.Empty, "The field CategoryId must be filled.");
-            Validations.DifferentValidate(AuthorId, Guid.Empty, "The field AuthorId must be filled.");
+            Validations.EqualsValidate(CategoryId, Guid.Empty, "The CategoryId field can't be empty.");
+            Validations.EqualsValidate(AuthorId, Guid.Empty, "The AuthorId field can't be empty.");
         }
     }
 }

@@ -9,8 +9,7 @@ namespace BookManager.Core.DomainObjects.ValueObjects
         public Document(string cpf)
         {
             Cpf = cpf;
-            Validations.ExpressionValidate(@"^\d{3}\.\d{3}\.\d{3}-\d{2}$", Cpf, "CPF is not valid");
-            Validations.ValidateIfEmpty(Cpf, "The field CPF must be filled.");
+            Validations.ExpressionValidate(@"^\d{3}\.\d{3}\.\d{3}-\d{2}$", Cpf, "CPF is not valid.");
         }
 
         public string Cpf { get; private set; }

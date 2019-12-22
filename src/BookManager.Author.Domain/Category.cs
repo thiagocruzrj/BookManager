@@ -22,7 +22,7 @@ namespace BookManager.Author.Domain
         public void Validate()
         {
             Validations.ValidateIfEmpty(Name, "The field Name must be filled.");
-            Validations.EqualsValidate(Code, 0, "The field Code can't be empty.");
+            Validations.EqualsValidate(Code, 0, "The field Code can't be zero.");
         }
     }
 }

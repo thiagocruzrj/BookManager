@@ -9,12 +9,12 @@ namespace BookManager.Core.DomainObjects
     {
         public static void EqualsValidate(object object1, object object2, string message)
         {
-            if (!object1.Equals(object2)) throw new DomainException(message);
+            if (object1.Equals(object2)) throw new DomainException(message);
         }
 
         public static void DifferentValidate(object object1, object object2, string message)
         {
-            if (object1.Equals(object2)) throw new DomainException(message);
+            if (!object1.Equals(object2)) throw new DomainException(message);
         }
 
         public static void CharactersValidate(string value, int max, string message)
