@@ -30,5 +30,10 @@ namespace BookManager.Catalog.Data.Repository
         {
             _context.Categories.Update(category);
         }
+
+        public void Delete(Category category)
+        {
+            _context.Categories.Remove(category);
+        }
     }
 }

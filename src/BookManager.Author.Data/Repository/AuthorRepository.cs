@@ -47,5 +47,10 @@ namespace BookManager.Catalog.Data.Repository
         {
             _context.Authors.Update(author);
         }
+
+        public void Delete(Author author)
+        {
+            _context.Authors.Remove(author);
+        }
     }
 }

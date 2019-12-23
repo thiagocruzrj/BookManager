@@ -55,12 +55,15 @@ namespace BookManager.Catalog.Data.Repository
         {
             _context.Books.Update(book);
         }
+        public void Delete(Book book)
+        {
+            _context.Books.Remove(book);
+        }
 
         public void Dispose()
         {
             _context?.Dispose();
         }
 
-        
     }
 }

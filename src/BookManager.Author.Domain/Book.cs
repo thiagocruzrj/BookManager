@@ -20,11 +20,30 @@ namespace BookManager.Catalog.Domain
         public Guid CategoryId { get; private set; }
         public Guid? AuthorId { get; private set; }
         public string Title { get; private set; }
+        public int StockQuantity { get; private set; }
         public DateTime ReleaseDate { get; private set; }
         public BookIdentificator Isbn { get; private set; }
         public DateTime RegisterDate { get; private set; }
         public Category Category { get; private set; }
         public Author Author { get; private set; }
+
+        public void DebitStock(int amount)
+        {
+            if (amount < 0) amount *= -1;
+            if (!IsThereInStock(amount)) throw new DomainException("Insuficient stock.");
+            StockQuantity -= amount;
+        }
+
+        public void RestoreStock(int amount)
+        {
+            StockQuantity += amount;
+        }
+
+        public bool IsThereInStock(int amount)
+        {
+            return StockQuantity >= amount;
+        }
+
         public void Validate()
         {
             Validations.ValidateIfEmpty(Title, "The field Title must be filled.");
