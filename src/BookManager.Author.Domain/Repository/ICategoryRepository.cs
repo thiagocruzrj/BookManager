@@ -8,5 +8,6 @@ namespace BookManager.Catalog.Domain.Repository
         Task<IEnumerable<Category>> GetCategories();
         void Add(Category category);
         void Update(Category category);
+        void Delete(Category category);
     }
 }

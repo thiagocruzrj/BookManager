@@ -16,5 +16,6 @@ namespace BookManager.Catalog.Domain.Repository
 
         void Add(Book book);
         void Update(Book book);
+        void Delete(Book book);
     }
 }
