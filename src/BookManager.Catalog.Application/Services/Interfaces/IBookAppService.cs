@@ -1,4 +1,5 @@
 ﻿using BookManager.Catalog.Application.ViewModels;
+using BookManager.Core.DomainObjects.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,14 +11,14 @@ namespace BookManager.Catalog.Application.Services
     {
         Task<IEnumerable<BookViewModel>> GetAll();
         Task<BookViewModel> GetById(Guid id);
-        Task<IEnumerable<BookViewModel>> GetByIsbn(string isbn);
-        Task<IEnumerable<BookViewModel>> GetByAuthor(string cpf);
-        Task<IEnumerable<BookViewModel>> GetByCategory(int code);
+        Task<BookViewModel> GetByIsbn(BookIdentificator isbn);
+        Task<BookViewModel> GetByAuthor(Document cpf);
+        Task<BookViewModel> GetByCategory(int code);
         Task<BookViewModel> DebitStock(Guid id, int amount);
         Task<BookViewModel> RestoreStock(Guid id, int amount);
 
-        void Add(BookViewModel bookViewModel);
-        void Update(BookViewModel bookViewModel);
-        void Delete(BookViewModel bookViewModel);
+        Task Add(BookViewModel bookViewModel);
+        Task Update(BookViewModel bookViewModel);
+        Task Delete(BookViewModel bookViewModel);
     }
 }

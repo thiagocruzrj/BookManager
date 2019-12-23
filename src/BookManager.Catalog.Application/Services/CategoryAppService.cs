@@ -1,4 +1,8 @@
-﻿using BookManager.Catalog.Application.ViewModels;
+﻿using AutoMapper;
+using BookManager.Catalog.Application.ViewModels;
+using BookManager.Catalog.Data;
+using BookManager.Catalog.Domain;
+using BookManager.Catalog.Domain.Repository;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,29 +12,52 @@ namespace BookManager.Catalog.Application.Services
 {
     public class CategoryAppService : ICategoryAppService
     {
-        public void Add(CategoryViewModel categoryViewModel)
+        private readonly ICategoryRepository _categoryRepository;
+        private readonly IMapper _mapper;
+        protected readonly CatalogContext Db;
+
+        public CategoryAppService(ICategoryRepository categoryRepository, IMapper mapper, CatalogContext db)
         {
-            throw new NotImplementedException();
+            _categoryRepository = categoryRepository;
+            _mapper = mapper;
+            Db = db;
+        }
+        public async Task Add(CategoryViewModel categoryViewModel)
+        {
+            var category = _mapper.Map<Category>(categoryViewModel);
+            _categoryRepository.Add(category);
+
+            await SaveChanges();
         }
 
-        public void Delete(CategoryViewModel categoryViewModel)
+        public async Task Delete(CategoryViewModel categoryViewModel)
         {
-            throw new NotImplementedException();
+            var category = _mapper.Map<Category>(categoryViewModel);
+            _categoryRepository.Delete(category);
+
+            await SaveChanges();
         }
 
+        public async Task<IEnumerable<CategoryViewModel>> GetCategories()
+        {
+            return _mapper.Map<IEnumerable<CategoryViewModel>>(await _categoryRepository.GetCategories());
+        }
+
+        public async Task Update(CategoryViewModel categoryViewModel)
+        {
+            var category = _mapper.Map<Category>(categoryViewModel);
+            _categoryRepository.Update(category);
+
+            await SaveChanges();
+        }
         public void Dispose()
         {
-            throw new NotImplementedException();
+            Db?.Dispose();
         }
 
-        public Task<IEnumerable<CategoryViewModel>> GetCategories()
+        public async Task<int> SaveChanges()
         {
-            throw new NotImplementedException();
-        }
-
-        public void Update(CategoryViewModel categoryViewModel)
-        {
-            throw new NotImplementedException();
+            return await Db.SaveChangesAsync();
         }
     }
 }

@@ -10,8 +10,9 @@ namespace BookManager.Catalog.Application.Services
     {
         Task<IEnumerable<CategoryViewModel>> GetCategories();
 
-        void Add(CategoryViewModel categoryViewModel);
-        void Update(CategoryViewModel categoryViewModel);
-        void Delete(CategoryViewModel categoryViewModel);
+        Task Add(CategoryViewModel categoryViewModel);
+        Task Update(CategoryViewModel categoryViewModel);
+        Task Delete(CategoryViewModel categoryViewModel);
+        Task<int> SaveChanges();
     }
 }

@@ -1,7 +1,8 @@
 ﻿using BookManager.Catalog.Application.ViewModels;
+using BookManager.Catalog.Domain;
+using BookManager.Core.DomainObjects.ValueObjects;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace BookManager.Catalog.Application.Services
@@ -10,11 +11,12 @@ namespace BookManager.Catalog.Application.Services
     {
         Task<IEnumerable<AuthorViewModel>> GetAll();
         Task<IEnumerable<AuthorViewModel>> GetById(Guid id);
-        Task<IEnumerable<AuthorViewModel>> GetByDoc(string cpf);
-        Task<IEnumerable<AuthorViewModel>> GetAllAuthorBooks(ICollection<BookViewModel> books);
+        Task<IEnumerable<AuthorViewModel>> GetByDoc(Document cpf);
+        Task<IEnumerable<AuthorViewModel>> GetAllAuthorBooks(ICollection<Book> books);
 
-        void Add(AuthorViewModel authorViewModel);
-        void Update(AuthorViewModel authorViewModel);
-        void Delete(AuthorViewModel authorViewModel);
+        Task Add(AuthorViewModel authorViewModel);
+        Task Update(AuthorViewModel authorViewModel);
+        Task Delete(AuthorViewModel authorViewModel);
+        Task<int> SaveChanges();
     }
 }

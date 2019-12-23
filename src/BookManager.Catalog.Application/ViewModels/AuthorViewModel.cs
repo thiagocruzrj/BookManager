@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookManager.Core.DomainObjects.ValueObjects;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
@@ -10,7 +11,7 @@ namespace BookManager.Catalog.Application.ViewModels
         [Key]
         public Guid Id { get; set; }
         [Required(ErrorMessage = "Field {0} is required.")]
-        public string Cpf { get; set; }
+        public Document Cpf { get; set; }
         [Required(ErrorMessage = "Field {0} is required.")]
         public string Name { get; set; }
         [Required(ErrorMessage = "Field {0} is required.")]
