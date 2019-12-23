@@ -5,11 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BookManager.Core\BookManager.Core.csproj" />
+    <PackageReference Include="MediatR" Version="7.0.0" />
   </ItemGroup>
-
+  
   <ItemGroup>
-    <Folder Include="Service\" />
+    <ProjectReference Include="..\BookManager.Core\BookManager.Core.csproj" />
   </ItemGroup>
 
 </Project>

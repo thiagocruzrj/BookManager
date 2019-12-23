@@ -1,4 +1,6 @@
-﻿using BookManager.Catalog.Domain.Repository;
+﻿using BookManager.Catalog.Domain.Events;
+using BookManager.Catalog.Domain.Repository;
+using BookManager.Core.Communication.MediatR;
 using System;
 using System.Threading.Tasks;
 
@@ -7,9 +9,11 @@ namespace BookManager.Catalog.Domain.Service
     public class StorageService : IStorageService
     {
         private readonly IBookRepository _bookRepository;
-        public StorageService(IBookRepository bookRepository)
+        private readonly IMediatrHandler _mediatrHandler;
+
+        public StorageService(IBookRepository bookRepository, IMediatrHandler mediatrHandler)
         {
-            _bookRepository = bookRepository;
+            _mediatrHandler = mediatrHandler;
         }
 
         public async Task<bool> DebitStock(Guid bookId, int amount)
@@ -19,6 +23,13 @@ namespace BookManager.Catalog.Domain.Service
             if (!book.IsThereInStock(amount)) return false;
 
             book.DebitStock(amount);
+
+            // TODO: Set the low inventory quantity
+            if (book.StockQuantity < 10)
+            {
+                await _mediatrHandler.PublishEvent(new BookBelowStockEvent(book.Id, book.StockQuantity));
+            }
+
             _bookRepository.Update(book);
             return await _bookRepository.UnitOfWork.Commit();
         }
