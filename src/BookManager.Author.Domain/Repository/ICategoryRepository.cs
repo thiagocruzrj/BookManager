@@ -1,8 +1,7 @@
-﻿using BookManager.Core.Data;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace BookManager.Author.Domain.Repository
+namespace BookManager.Catalog.Domain.Repository
 {
     public interface ICategoryRepository
     {

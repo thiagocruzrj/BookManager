@@ -1,6 +1,7 @@
 ﻿using BookManager.Core.DomainObjects;
+using System.Collections.Generic;
 
-namespace BookManager.Author.Domain
+namespace BookManager.Catalog.Domain
 {
     public class Category : Entity
     {
@@ -13,6 +14,10 @@ namespace BookManager.Author.Domain
 
         public string Name { get; private set; }
         public int Code { get; private set; }
+        // EF Relation
+        public virtual ICollection<Book> Books { get; set; }
+
+        protected Category() { }
 
         public override string ToString()
         {

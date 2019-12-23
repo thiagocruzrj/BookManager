@@ -1,7 +1,7 @@
 using BookManager.Core.DomainObjects;
 using Xunit;
 
-namespace BookManager.Author.Domain.Tests
+namespace BookManager.Catalog.Domain.Tests
 {
     public class CategoryTest
     {

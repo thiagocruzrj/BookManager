@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApps", "WebApps", "{EFAF
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Author", "Author", "{2F503D07-53F4-4C5B-9C5A-AC502430D2AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookManager.Author.Domain", "src\BookManager.Author.Domain\BookManager.Author.Domain.csproj", "{9829C783-7DB3-4BF2-BADF-76A8D613388A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookManager.Catalog.Domain", "src\BookManager.Author.Domain\BookManager.Catalog.Domain.csproj", "{9829C783-7DB3-4BF2-BADF-76A8D613388A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{3DB972D0-46D5-4586-8199-91DF202B2ABE}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{DA37A99F-E207-4B09-9C5A-112D5D006953}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookManager.Author.Domain.Tests", "tests\BookManager.Author.Domain.Tests\BookManager.Author.Domain.Tests.csproj", "{2834A1F7-9115-4556-98A8-E30859EFDE5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookManager.Catalog.Data", "src\BookManager.Author.Data\BookManager.Catalog.Data.csproj", "{696F6B11-0C32-4EC3-BA16-DC9C29E6C5F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{2834A1F7-9115-4556-98A8-E30859EFDE5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2834A1F7-9115-4556-98A8-E30859EFDE5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2834A1F7-9115-4556-98A8-E30859EFDE5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{696F6B11-0C32-4EC3-BA16-DC9C29E6C5F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{696F6B11-0C32-4EC3-BA16-DC9C29E6C5F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{696F6B11-0C32-4EC3-BA16-DC9C29E6C5F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{696F6B11-0C32-4EC3-BA16-DC9C29E6C5F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +57,7 @@ Global
 		{91EFFB96-D262-48C9-B9DC-5171DF2CFB05} = {6278777A-408B-4DA3-B359-647A91D9332A}
 		{DA37A99F-E207-4B09-9C5A-112D5D006953} = {2F503D07-53F4-4C5B-9C5A-AC502430D2AD}
 		{2834A1F7-9115-4556-98A8-E30859EFDE5E} = {DA37A99F-E207-4B09-9C5A-112D5D006953}
+		{696F6B11-0C32-4EC3-BA16-DC9C29E6C5F7} = {2F503D07-53F4-4C5B-9C5A-AC502430D2AD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0A4DBCAF-6ED9-43FC-A90E-A1CB7D348883}

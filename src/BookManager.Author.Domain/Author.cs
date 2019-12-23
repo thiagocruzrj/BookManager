@@ -3,7 +3,7 @@ using BookManager.Core.DomainObjects.ValueObjects;
 using System;
 using System.Collections.Generic;
 
-namespace BookManager.Author.Domain
+namespace BookManager.Catalog.Domain
 {
     public class Author : Entity
     {
@@ -18,7 +18,10 @@ namespace BookManager.Author.Domain
         public Document Cpf { get; private set; }
         public string Name { get; private set; }
         public DateTime Birthdate { get; private set; }
-        public ICollection<Book> Books { get; private set; }
+        // EF Relation
+        public virtual ICollection<Book> Books { get; private set; } = new HashSet<Book>();
+
+        protected Author() { }
 
         public void Validate()
         {

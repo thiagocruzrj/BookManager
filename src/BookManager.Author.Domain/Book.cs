@@ -2,25 +2,27 @@
 using BookManager.Core.DomainObjects.ValueObjects;
 using System;
 
-namespace BookManager.Author.Domain
+namespace BookManager.Catalog.Domain
 {
     public class Book : Entity, IAggregateRoot
     {
-        public Book(Guid categoryId, Guid authorId, string title, DateTime releaseDate, BookIdentificator isbn)
+        public Book(Guid categoryId, Guid authorId, string title, DateTime releaseDate, BookIdentificator isbn, DateTime registerDate)
         {
             CategoryId = categoryId;
             AuthorId = authorId;
             Title = title;
             ReleaseDate = releaseDate;
             Isbn = isbn;
+            RegisterDate = registerDate;
             Validate();
         }
 
         public Guid CategoryId { get; private set; }
-        public Guid AuthorId { get; private set; }
+        public Guid? AuthorId { get; private set; }
         public string Title { get; private set; }
         public DateTime ReleaseDate { get; private set; }
         public BookIdentificator Isbn { get; private set; }
+        public DateTime RegisterDate { get; private set; }
         public Category Category { get; private set; }
         public Author Author { get; private set; }
         public void Validate()

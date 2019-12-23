@@ -3,7 +3,7 @@ using BookManager.Core.DomainObjects.ValueObjects;
 using System;
 using Xunit;
 
-namespace BookManager.Author.Domain.Tests
+namespace BookManager.Catalog.Domain.Tests
 {
     public class AuthorTest
     {
