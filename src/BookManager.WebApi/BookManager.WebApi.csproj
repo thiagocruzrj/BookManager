@@ -7,13 +7,15 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BookManager.Author.Data\BookManager.Catalog.Data.csproj" />
+    <ProjectReference Include="..\BookManager.Data\BookManager.Data.csproj" />
     <ProjectReference Include="..\BookManager.Core\BookManager.Core.csproj" />
-    <ProjectReference Include="..\BookManager.Catalog.Application\BookManager.Catalog.Application.csproj" />
-    <ProjectReference Include="..\BookManager.Author.Domain\BookManager.Catalog.Domain.csproj" />
+    <ProjectReference Include="..\BookManager.Application\BookManager.Application.csproj" />
+    <ProjectReference Include="..\BookManager.Domain\BookManager.Domain.csproj" />
   </ItemGroup>
 
 </Project>

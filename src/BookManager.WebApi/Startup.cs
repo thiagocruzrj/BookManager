@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using MediatR;
+using AutoMapper;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -27,7 +29,9 @@ namespace BookManager.WebApi
         {
             services.AddControllers();
 
-            services.AddIdentityConfiguration();
+            services.AddIdentityConfiguration(Configuration);
+
+            services.AddMediatR(typeof(Startup));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

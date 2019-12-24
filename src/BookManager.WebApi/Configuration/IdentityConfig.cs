@@ -1,6 +1,6 @@
 using System.Text;
-using DevIO.Api.Data;
-using DevIO.Api.Extensions;
+using BookManager.WebApi.Data;
+using BookManager.WebApi.Extensions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
