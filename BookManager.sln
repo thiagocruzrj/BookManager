@@ -25,7 +25,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookManager.Data", "src\Boo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookManager.Application", "src\BookManager.Application\BookManager.Application.csproj", "{325CEEFA-C191-475C-A81D-2077867DA2D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookManager.WebApi", "src\BookManager.WebApi\BookManager.WebApi.csproj", "{91E65611-6690-4AE6-81FE-37205870859F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookManager.WebApi", "src\BookManager.WebApi\BookManager.WebApi.csproj", "{91E65611-6690-4AE6-81FE-37205870859F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrossCutting", "CrossCutting", "{018D73C7-2FFC-4F14-B5CE-B9C823072536}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookManager.CrossCutting", "src\BookManager.CrossCutting\BookManager.CrossCutting.csproj", "{6B4C3C65-1090-4A0C-8989-66397161DACB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +61,10 @@ Global
 		{91E65611-6690-4AE6-81FE-37205870859F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91E65611-6690-4AE6-81FE-37205870859F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91E65611-6690-4AE6-81FE-37205870859F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B4C3C65-1090-4A0C-8989-66397161DACB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B4C3C65-1090-4A0C-8989-66397161DACB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B4C3C65-1090-4A0C-8989-66397161DACB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B4C3C65-1090-4A0C-8989-66397161DACB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,6 +80,8 @@ Global
 		{696F6B11-0C32-4EC3-BA16-DC9C29E6C5F7} = {2F503D07-53F4-4C5B-9C5A-AC502430D2AD}
 		{325CEEFA-C191-475C-A81D-2077867DA2D5} = {2F503D07-53F4-4C5B-9C5A-AC502430D2AD}
 		{91E65611-6690-4AE6-81FE-37205870859F} = {2F503D07-53F4-4C5B-9C5A-AC502430D2AD}
+		{018D73C7-2FFC-4F14-B5CE-B9C823072536} = {6278777A-408B-4DA3-B359-647A91D9332A}
+		{6B4C3C65-1090-4A0C-8989-66397161DACB} = {018D73C7-2FFC-4F14-B5CE-B9C823072536}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0A4DBCAF-6ED9-43FC-A90E-A1CB7D348883}
