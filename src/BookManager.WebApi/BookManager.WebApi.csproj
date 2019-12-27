@@ -2,20 +2,26 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>bea639a3-e5ee-433f-ab6d-f933235153c0</UserSecretsId>
+    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
-    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.9.10" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BookManager.Data\BookManager.Data.csproj" />
-    <ProjectReference Include="..\BookManager.Core\BookManager.Core.csproj" />
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BookManager.Application\BookManager.Application.csproj" />
+    <ProjectReference Include="..\BookManager.Core\BookManager.Core.csproj" />
+    <ProjectReference Include="..\BookManager.Data\BookManager.Data.csproj" />
     <ProjectReference Include="..\BookManager.Domain\BookManager.Domain.csproj" />
   </ItemGroup>
+
 
 </Project>

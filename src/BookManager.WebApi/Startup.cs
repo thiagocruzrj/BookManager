@@ -1,17 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using MediatR;
 using AutoMapper;
-using System.Threading.Tasks;
+using BookManager.Application.AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace BookManager.WebApi
 {
@@ -28,10 +21,7 @@ namespace BookManager.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-
-            services.AddIdentityConfiguration(Configuration);
-
-            services.AddMediatR(typeof(Startup));
+            services.AddAutoMapper(typeof(DomainToViewModelMappingProfile), typeof(ViewModelToDomainMappingProfile));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

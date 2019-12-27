@@ -10,8 +10,8 @@ namespace BookManager.Domain.Repository
     {
         Task<IEnumerable<Book>> GetAll();
         Task<Book> GetById(Guid id);
-        Task<IEnumerable<Book>> GetByIsbn(BookIdentificator isbn);
-        Task<IEnumerable<Book>> GetByAuthor(Document cpf);
+        Task<Book> GetByIsbn(BookIdentificator isbn);
+        Task<Book> GetByAuthor(Document cpf);
         Task<IEnumerable<Book>> GetByCategory(int code);
 
         void Add(Book book);

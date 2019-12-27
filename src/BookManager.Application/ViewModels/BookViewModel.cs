@@ -11,6 +11,12 @@ namespace BookManager.Application.ViewModels
         [Key]
         public Guid Id { get; set; }
 
+        [Required(ErrorMessage = "Field {0} is required.")]
+        public Guid CategoryId { get; private set; }
+
+        [Required(ErrorMessage = "Field {0} is required.")]
+        public Guid AuthorId { get; private set; }
+
         [Required(ErrorMessage ="Field {0} is required.")]
         public string Title { get; set; }
 
@@ -21,11 +27,12 @@ namespace BookManager.Application.ViewModels
         public DateTime ReleaseDate { get; set; }
 
         [Required(ErrorMessage = "Field {0} is required.")]
-        public BookIdentificator Isbn { get; set; }
+        public string Isbn { get; set; }
 
         [Required(ErrorMessage = "Field {0} is required.")]
         public DateTime RegisterDate { get; set; }
 
         public IEnumerable<CategoryViewModel> Categories { get; set; }
+
     }
 }

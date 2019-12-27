@@ -51,9 +51,9 @@ namespace BookManager.Application.Services
             return _mapper.Map<IEnumerable<AuthorViewModel>>(await _authorRepository.GetAllAuthorBooks(books));
         }
 
-        public async Task<IEnumerable<AuthorViewModel>> GetById(Guid id)
+        public async Task<AuthorViewModel> GetById(Guid id)
         {
-            return _mapper.Map<IEnumerable<AuthorViewModel>>(await _authorRepository.GetById(id));
+            return _mapper.Map<AuthorViewModel>(await _authorRepository.GetById(id));
         }
 
         public async Task Update(AuthorViewModel authorViewModel)
@@ -64,9 +64,9 @@ namespace BookManager.Application.Services
             await SaveChanges();
         }
 
-        public async Task<IEnumerable<AuthorViewModel>> GetByDoc(Document cpf)
+        public async Task<AuthorViewModel> GetByDoc(string cpf)
         {
-            return _mapper.Map<IEnumerable<AuthorViewModel>>(await _authorRepository.GetByDoc(cpf));
+            return _mapper.Map<AuthorViewModel>(await _authorRepository.GetByDoc(cpf));
         }
         public void Dispose()
         {

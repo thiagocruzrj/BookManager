@@ -11,7 +11,7 @@ namespace BookManager.Application.ViewModels
         [Key]
         public Guid Id { get; set; }
         [Required(ErrorMessage = "Field {0} is required.")]
-        public Document Cpf { get; set; }
+        public string Cpf { get; set; }
         [Required(ErrorMessage = "Field {0} is required.")]
         public string Name { get; set; }
         [Required(ErrorMessage = "Field {0} is required.")]

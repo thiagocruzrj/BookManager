@@ -8,8 +8,8 @@ namespace BookManager.Domain.Repository
     public interface IAuthorRepository
     {
         Task<IEnumerable<Author>> GetAll();
-        Task<IEnumerable<Author>> GetById(Guid id);
-        Task<IEnumerable<Author>> GetByDoc(Document cpf);
+        Task<Author> GetById(Guid id);
+        Task<Author> GetByDoc(string cpf);
         Task<IEnumerable<Author>> GetAllAuthorBooks(ICollection<Book> books);
 
         void Add(Author author);
