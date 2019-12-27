@@ -33,14 +33,13 @@ namespace BookManager.Data.Repository
             return await _context.Authors.AsNoTracking().Include(b => b.Books).Where(a => a.Books == books).ToListAsync();
         }
 
-        public async Task<IEnumerable<Author>> GetByDoc(Document cpf)
+        public async Task<Author> GetByDoc(Document cpf)
         {
-            return await _context.Authors.AsNoTracking().Include(b => b.Cpf).Where(a => a.Cpf == cpf).ToListAsync();
+            return await _context.Authors.FindAsync(cpf);
         }
-
-        public async Task<IEnumerable<Author>> GetById(Guid id)
+        public async Task<Author> GetById(Guid id)
         {
-            return await _context.Authors.AsNoTracking().Include(b => b.Id).Where(a => a.Id == id).ToListAsync();
+            return await _context.Authors.FindAsync(id);
         }
 
         public void Update(Author author)

@@ -1,10 +1,10 @@
 ﻿
 using AutoMapper;
 using BookManager.Application.ViewModels;
+using BookManager.Core.DomainObjects.ValueObjects;
 using BookManager.Data;
 using BookManager.Domain;
 using BookManager.Domain.Repository;
-using BookManager.Core.DomainObjects.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -64,10 +64,11 @@ namespace BookManager.Application.Services
             await SaveChanges();
         }
 
-        public async Task<AuthorViewModel> GetByDoc(string cpf)
+        public async Task<AuthorViewModel> GetByDoc(Document cpf)
         {
             return _mapper.Map<AuthorViewModel>(await _authorRepository.GetByDoc(cpf));
         }
+
         public void Dispose()
         {
             Db?.Dispose();

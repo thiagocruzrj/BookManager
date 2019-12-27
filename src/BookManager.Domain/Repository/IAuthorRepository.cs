@@ -9,7 +9,7 @@ namespace BookManager.Domain.Repository
     {
         Task<IEnumerable<Author>> GetAll();
         Task<Author> GetById(Guid id);
-        Task<Author> GetByDoc(string cpf);
+        Task<Author> GetByDoc(Document cpf);
         Task<IEnumerable<Author>> GetAllAuthorBooks(ICollection<Book> books);
 
         void Add(Author author);

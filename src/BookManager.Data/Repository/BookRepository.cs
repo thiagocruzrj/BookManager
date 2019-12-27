@@ -27,13 +27,13 @@ namespace BookManager.Data.Repository
             return await _context.Books.AsNoTracking().ToListAsync();
         }
 
-        public async Task<IEnumerable<Book>> GetByAuthor(Document cpf)
+        public async Task<Book> GetByAuthor(Document cpf)
         {
-            return await _context.Books.AsNoTracking().Include(b => b.Author).Where(a => a.Author.Cpf == cpf).ToListAsync();
+            return await _context.Books.FindAsync(cpf);
         }
-        public async Task<IEnumerable<Book>> GetByIsbn(BookIdentificator isbn)
+        public async Task<Book> GetByIsbn(BookIdentificator isbn)
         {
-            return await _context.Books.AsNoTracking().Include(b => b.Isbn).Where(a => a.Isbn == isbn).ToListAsync();
+            return await _context.Books.FindAsync(isbn);
         }
 
         public async Task<IEnumerable<Book>> GetByCategory(int code)
