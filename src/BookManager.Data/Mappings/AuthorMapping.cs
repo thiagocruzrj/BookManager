@@ -20,8 +20,9 @@ namespace BookManager.Data.Mappings
             builder.OwnsOne(c => c.Cpf, cm =>
             {
                 cm.Property(c => c.Cpf)
+                    .IsRequired()
                     .HasColumnName("Cpf")
-                    .HasColumnType("varchar");
+                    .HasColumnType("varchar(11)");
             });
 
             // 0 : N => Author : Books

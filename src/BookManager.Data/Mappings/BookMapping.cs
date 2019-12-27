@@ -20,8 +20,9 @@ namespace BookManager.Data.Mappings
             builder.OwnsOne(c => c.Isbn, cm =>
             {
                 cm.Property(c => c.Isbn)
+                    .IsRequired()
                     .HasColumnName("Isbn")
-                    .HasColumnType("varchar");
+                    .HasColumnType("varchar(13)");
             });
 
             // N : 1 => Books : Author

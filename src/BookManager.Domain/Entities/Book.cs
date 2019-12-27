@@ -17,8 +17,10 @@ namespace BookManager.Domain
             Validate();
         }
 
+        protected Book() {}
+
         public Guid CategoryId { get; private set; }
-        public Guid? AuthorId { get; private set; }
+        public Guid AuthorId { get; private set; }
         public string Title { get; private set; }
         public int StockQuantity { get; private set; }
         public DateTime ReleaseDate { get; private set; }
