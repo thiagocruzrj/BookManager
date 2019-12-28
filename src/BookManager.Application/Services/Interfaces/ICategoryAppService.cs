@@ -11,7 +11,7 @@ namespace BookManager.Application.Services
 
         Task Add(CategoryViewModel categoryViewModel);
         Task Update(CategoryViewModel categoryViewModel);
-        Task Delete(CategoryViewModel categoryViewModel);
+        Task Delete(Guid id);
         Task<int> SaveChanges();
     }
 }

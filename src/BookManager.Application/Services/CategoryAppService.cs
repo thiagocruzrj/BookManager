@@ -30,10 +30,10 @@ namespace BookManager.Application.Services
             await SaveChanges();
         }
 
-        public async Task Delete(CategoryViewModel categoryViewModel)
+        public async Task Delete(Guid id)
         {
-            var category = _mapper.Map<Category>(categoryViewModel);
-            _categoryRepository.Delete(category);
+            var book = _mapper.Map<Book>(id);
+            _categoryRepository.Delete(id);
 
             await SaveChanges();
         }
