@@ -14,57 +14,59 @@ namespace BookManager.Data.Repository
     public class BookRepository : IBookRepository
     {
         private readonly CatalogContext _context;
+        protected readonly DbSet<Book> DbSet;
 
         public BookRepository(CatalogContext context)
         {
             _context = context;
+            DbSet = _context.Set<Book>();
         }
 
         public IUnitOfWork UnitOfWork => _context;
 
         public async Task<IEnumerable<Book>> GetAll()
         {
-            return await _context.Books.AsNoTracking().ToListAsync();
+            return await DbSet.AsNoTracking().ToListAsync();
         }
 
         public async Task<Book> GetByAuthor(Document cpf)
         {
-            return await _context.Books.FindAsync(cpf);
+            return await DbSet.FindAsync(cpf);
         }
         public async Task<Book> GetByIsbn(BookIdentificator isbn)
         {
-            return await _context.Books.FindAsync(isbn);
+            return await DbSet.FindAsync(isbn);
         }
 
         public async Task<IEnumerable<Book>> GetByCategory(int code)
         {
-            return await _context.Books.AsNoTracking().Include(b => b.Category).Where(a => a.Category.Code == code).ToListAsync();
+            return await DbSet.AsNoTracking().Include(b => b.Category).Where(a => a.Category.Code == code).ToListAsync();
         }
 
         public async Task<Book> GetById(Guid id)
         {
-            return await _context.Books.FindAsync(id);
+            return await DbSet.FindAsync(id);
         }
 
         public void Add(Book book)
         {
-            _context.Books.Add(book);
+            DbSet.Add(book);
         }
 
         public void Update(Book book)
         {
-            _context.Books.Update(book);
+            DbSet.Update(book);
         }
 
-        public void Delete(Book book)
+        public void Delete(Guid id)
         {
-            _context.Books.Remove(book);
+            DbSet.Remove(DbSet.Find(id));
         }
 
         public void Dispose()
         {
-            _context?.Dispose();
+            _context.Dispose();
+            GC.SuppressFinalize(this);
         }
-
     }
 }

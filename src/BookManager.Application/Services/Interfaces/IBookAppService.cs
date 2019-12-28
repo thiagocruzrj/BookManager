@@ -18,6 +18,6 @@ namespace BookManager.Application.Services
 
         Task Add(BookViewModel bookViewModel);
         Task Update(BookViewModel bookViewModel);
-        Task Delete(BookViewModel bookViewModel);
+        Task Delete(Guid id);
     }
 }

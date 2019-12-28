@@ -16,6 +16,6 @@ namespace BookManager.Domain.Repository
 
         void Add(Book book);
         void Update(Book book);
-        void Delete(Book book);
+        void Delete(Guid id);
     }
 }

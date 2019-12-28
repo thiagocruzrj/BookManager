@@ -40,10 +40,10 @@ namespace BookManager.Application.Services
             return _mapper.Map<BookViewModel>(await _bookRepository.GetById(id));
         }
 
-        public async Task Delete(BookViewModel bookViewModel)
+        public async Task Delete(Guid id)
         {
-            var book = _mapper.Map<Book>(bookViewModel);
-            _bookRepository.Delete(book);
+            var book = _mapper.Map<Book>(id);
+            _bookRepository.Delete(id);
 
             await _bookRepository.UnitOfWork.Commit();
         }

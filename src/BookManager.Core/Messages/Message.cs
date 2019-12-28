@@ -1,8 +1,9 @@
-﻿using System;
+﻿using MediatR;
+using System;
 
 namespace BookManager.Core.Messages
 {
-    public abstract class Message
+    public abstract class Message : IRequest<bool>
     {
         protected Message()
         {
